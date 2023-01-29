@@ -9,6 +9,13 @@
                     <input type="hidden" id="prod_id" name="prod_id">
 
                     <div class="form-group">
+                        <label class="form-label" for="cat_id">Categoria</label>
+                        <select class="form-control select2" id="cat_id" name="cat_id" data-placeholder="Selecione" style="width: 100%">
+                    
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label class="form-label" for="prod_nom">Nombre</label>
                         <input type="text" class="form-control" id="prod_nom" name="prod_nom" placeholder="Ingrese Nombre" required>
                     </div>

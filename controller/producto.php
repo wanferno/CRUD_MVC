@@ -30,10 +30,10 @@
             $datos=$producto->get_producto_x_id($_POST["prod_id"]);
             if(empty($_POST["prod_id"])){
                 if(is_array($datos)==true and count($datos)==0){
-                    $producto->insert_producto($_POST["prod_nom"],$_POST["prod_des"]);
+                    $producto->insert_producto($_POST["cat_id"],$_POST["prod_nom"],$_POST["prod_des"]);
                 }
             }else{
-                $producto->update_producto($_POST["prod_id"],$_POST["prod_nom"],$_POST["prod_des"]);
+                $producto->update_producto($_POST["prod_id"],$_POST["cat_id"],$_POST["prod_nom"],$_POST["prod_des"]);
             }
             break;
 
@@ -54,7 +54,5 @@
             $producto->delete_producto($_POST["prod_id"]);
             break;
 
-            
-            
-    }  
+    } 
 ?>
