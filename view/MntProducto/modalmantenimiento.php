@@ -11,7 +11,6 @@
                     <div class="form-group">
                         <label class="form-label" for="cat_id">Categoria</label>
                         <select class="form-control select2" id="cat_id" name="cat_id" data-placeholder="Selecione" style="width: 100%">
-                    
                         </select>
                     </div>
 
@@ -23,6 +22,11 @@
                     <div class="form-group">
                         <label class="form-label" for="prod_des">Descripcion</label>
                         <textarea rows="3" class="form-control" id="prod_des" name="prod_des" placeholder="Ingrese Descripción" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="prod_cant">Cantidad</label>
+                        <textarea type="number" class="form-control" id="prod_cant" name="prod_cant" placeholder="Ingrese Cantidad" required></textarea>
                     </div>
 
                 </div>

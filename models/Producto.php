@@ -3,7 +3,17 @@
         public function get_producto(){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT * FROM tm_producto WHERE est=1";
+            $sql="SELECT 
+            tm_producto.prod_id,
+            tm_producto.cat_id,
+            tm_producto.prod_nom,
+            tm_producto.prod_des,
+            tm_producto.prod_cant,
+            tm_categoria.cat_nom
+            FROM 
+            tm_producto INNER JOIN
+            tm_categoria on tm_producto.cat_id=tm_categoria.cat_id
+            WHERE tm_producto.est=1";
             $sql=$conectar->prepare($sql);
             $sql->execute();
             return $resultado=$sql->fetchAll();
@@ -34,22 +44,23 @@
             return $resultado=$sql->fetchAll();
         }
 
-        public function insert_producto($cat_id, $prod_nom, $prod_des){
+        public function insert_producto($cat_id, $prod_nom, $prod_des, $prod_cant){
             $conectar= parent::conexion();
             parent::set_names();
             $sql="INSERT INTO tm_producto 
-                (prod_id, cat_id, prod_nom, prod_des, fech_crea, fech_modi, fech_elim, est) 
+                (prod_id, cat_id, prod_nom, prod_des, prod_cant, fech_crea, fech_modi, fech_elim, est) 
                 VALUES 
-                (NULL, ?, ?, ?, now(), NULL, NULL, 1);";
+                (NULL, ?, ?, ?, ?, now(), NULL, NULL, 1);";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1,$cat_id);
             $sql->bindValue(2,$prod_nom);
             $sql->bindValue(3,$prod_des);
+            $sql->bindValue(4,$prod_cant);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
 
-        public function update_producto($prod_id, $cat_id, $prod_nom, $prod_des){
+        public function update_producto($prod_id, $cat_id, $prod_nom, $prod_des, $prod_cant){
             $conectar=parent::conexion();
             parent::set_names();
             $sql="UPDATE tm_producto
@@ -57,6 +68,7 @@
                     cat_id=?,
                     prod_nom=?,
                     prod_des=?,
+                    prod_cant=?,
                     fech_modi=now()
                 WHERE
                     prod_id = ?";
@@ -64,7 +76,8 @@
             $sql->bindValue(1,$cat_id);
             $sql->bindValue(2,$prod_nom);
             $sql->bindValue(3,$prod_des);
-            $sql->bindValue(4,$prod_id);
+            $sql->bindValue(4,$prod_cant);
+            $sql->bindValue(5,$prod_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

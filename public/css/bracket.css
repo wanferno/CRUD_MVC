@@ -4299,7 +4299,7 @@ button.close {
 
 .modal-dialog {
   position: relative;
-  width: auto;
+  width: 90%;
   margin: 10px;
 }
 
@@ -4373,7 +4373,7 @@ button.close {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
+    max-width: 500px !important;
     margin: 30px auto;
   }
 
@@ -4383,7 +4383,8 @@ button.close {
 }
 @media (min-width: 992px) {
   .modal-lg {
-    max-width: 800px;
+    width: 90%;
+    max-width: 2000px !important;
   }
 }
 .tooltip {
@@ -10159,6 +10160,7 @@ textarea.parsley-error:active {
 .table {
   border-collapse: separate;
   border-spacing: 0;
+  
 }
 .table th.valign-middle,
 .table td.valign-middle {
@@ -47570,7 +47572,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 }
 
 .tx-spacing-7 {
-  letter-spacign: 3.5px;
+  letter-spacing: 3.5px;
 }
 
 .tx-spacing-8 {

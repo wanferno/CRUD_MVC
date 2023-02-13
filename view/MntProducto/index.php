@@ -31,13 +31,15 @@
             <button id="btnnuevo" class="btn btn-outline-primary btn-block mg-b-10">Nuevo Registro</button>
 
             <div class="table-wrapper">
-              <table id="producto_data" class="table display responsive nowrap">
+              <table id="producto_data" class="table display responsive nowrap" >
                 <thead>
-                  <tr>
-                    <th class="wd-15p">Nombre</th>
-                    <th class="wd-15p">Descripción</th>
-                    <th class="wd-15p"></th>
-                    <th class="wd-20p"></th>
+                  <tr style= "max-width: 800px; table-layout: fixed;">
+                    <th class="wd-10p" >Categoria</th>
+                    <th class="wd-10p" >Nombre</th>
+                    <th class="wd-10p" style= " word-wrap: break-word; " >Descripción</th>
+                    <th class="wd-10p" >Cat.</th>
+                    <th class="wd-10p" >Editar</th>
+                    <th class="wd-10p" >Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>
